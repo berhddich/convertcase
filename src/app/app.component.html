@@ -1,20 +1,30 @@
 <ion-app>
-  <ion-menu side="start" menuId="first" contentId="main">
-    <ion-header>
-      <ion-toolbar color="primary">
-        <ion-title>Start Menu</ion-title>
-      </ion-toolbar>
-    </ion-header>
+  <ion-menu menuId="first" contentId="main" [side]="side">
     <ion-content>
-      <ion-list>
-        <ion-item>Menu Item</ion-item>
-        <ion-item>Menu Item</ion-item>
-        <ion-item>Menu Item</ion-item>
-        <ion-item>Menu Item</ion-item>
-        <ion-item>Menu Item</ion-item>
+      <div class="menu-heder-bg">
+        <div class="header-content">
+          <img src="../assets/logo.png" alt="" />
+        </div>
+      </div>
+      <ion-list class="menu-items" lines="none">
+        <ion-item>
+          <ion-label>Night mode</ion-label>
+          <ion-toggle
+            slot="end"
+            [(ngModel)]="mode"
+            (ionChange)="togglrTheme($event)"
+          >
+          </ion-toggle>
+        </ion-item>
       </ion-list>
     </ion-content>
   </ion-menu>
+
+  <ion-buttons class="ionbuttonsMenu" collapse="true">
+    <ion-button class="ionbuttonMenu" (click)="openMenu()">
+      <ion-icon slot="icon-only" name="menu"></ion-icon>
+    </ion-button>
+  </ion-buttons>
 
   <ion-router-outlet id="main"></ion-router-outlet>
 </ion-app>

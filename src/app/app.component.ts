@@ -7,7 +7,12 @@ import { MenuController } from '@ionic/angular';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  constructor(private menu: MenuController) {}
+  mode;
+  side;
+
+  constructor(private menu: MenuController) {
+    this.checkDarkTheme();
+  }
 
   openFirst() {
     this.menu.enable(true, 'first');
@@ -21,5 +26,29 @@ export class AppComponent {
   openCustom() {
     this.menu.enable(true, 'custom');
     this.menu.open('custom');
+  }
+
+  openMenu() {
+    this.menu.open('first');
+  }
+
+  checkDarkTheme() {
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+    if (prefersDark.matches) {
+      document.body.setAttribute('color-theme', 'dark');
+      this.mode = true;
+    } else {
+      document.body.setAttribute('color-theme', 'light');
+      this.mode = false;
+    }
+  }
+  togglrTheme(event) {
+    if (event.detail.checked) {
+      document.body.setAttribute('color-theme', 'dark');
+      this.mode = false;
+    } else {
+      document.body.setAttribute('color-theme', 'light');
+      this.mode = false;
+    }
   }
 }
