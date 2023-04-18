@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ConvertComponent } from './convert.component';
-import { FormsModule } from '@angular/forms';
-import { IonicModule } from '@ionic/angular';
+import { SharedModule } from '../shared.module';
+import { ConvertPageRoutingModule } from './convert-routing.module';
 
 @NgModule({
-  imports: [CommonModule, FormsModule, IonicModule],
+  imports: [CommonModule, SharedModule, ConvertPageRoutingModule],
   declarations: [ConvertComponent],
 })
 export class ConvertModule {}

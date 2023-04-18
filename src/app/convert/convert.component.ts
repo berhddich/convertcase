@@ -1,18 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterContentInit, Component } from '@angular/core';
 import voca from 'voca';
+import { ClipboardService } from 'ngx-clipboard';
 
 @Component({
   selector: 'app-convert',
   templateUrl: './convert.component.html',
   styleUrls: ['./convert.component.scss'],
 })
-export class ConvertComponent implements OnInit {
-  entrytext: string;
-  finaltext: string;
-  voca;
-  constructor() {}
+export class ConvertComponent {
+  entrytext = 'ss';
+  finaltext: '';
 
-  ngOnInit() {}
+  voca;
+
+  constructor(private clipboardApi: ClipboardService) {}
+
   lowerCase(): void {
     this.finaltext = voca.lowerCase(this.entrytext);
   }
@@ -39,5 +41,9 @@ export class ConvertComponent implements OnInit {
   }
   titleCase(): void {
     this.finaltext = voca.titleCase(this.entrytext);
+  }
+  copyText() {
+    console.log(this.entrytext);
+    this.clipboardApi.copyFromContent('ddd');
   }
 }

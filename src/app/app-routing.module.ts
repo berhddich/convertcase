@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { ConvertComponent } from './convert/convert.component';
+import { VoakFoncComponent } from './voak-fonc/voak-fonc.component';
 
 const routes: Routes = [
   {
@@ -10,7 +11,14 @@ const routes: Routes = [
   },
   {
     path: 'convert',
-    component: ConvertComponent,
+    loadChildren: () =>
+      import('./convert/convert-routing.module').then(
+        (m) => m.ConvertPageRoutingModule
+      ),
+  },
+  {
+    path: 'voka',
+    component: VoakFoncComponent,
   },
   {
     path: '',
