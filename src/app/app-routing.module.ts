@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { ConvertComponent } from './convert/convert.component';
-import { VoakFoncComponent } from './voak-fonc/voak-fonc.component';
 
 const routes: Routes = [
   {
@@ -15,10 +14,7 @@ const routes: Routes = [
       import('./convert/convert.module').then((m) => m.ConvertModule),
 
   },
-  {
-    path: 'voka',
-    component: VoakFoncComponent,
-  },
+
   {
     path: '',
     redirectTo: 'home',

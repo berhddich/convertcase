@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Convert text</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="cancel()">Close</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <ion-item class="text">
+    <ion-label position="floating">Enter the text</ion-label>
+    <ion-textarea rows="8" [(ngModel)]="entrytext"></ion-textarea>
+  </ion-item>
+  <ion-item class="text">
+    <ion-label position="floating">Result</ion-label>
+    <ion-textarea rows="8" [value]="finaltext" readonly="true"></ion-textarea>
+  </ion-item>
+
+  <div class="action">
+    <ion-list-header>Action</ion-list-header>
+    <div>
+      <ion-chip outline color="primary" (click)="lowerCase()">
+        <ion-label>lowerCase</ion-label>
+      </ion-chip>
+      <ion-chip outline color="primary" (click)="upperCase()">
+        <ion-label>upperCase</ion-label>
+      </ion-chip>
+      <ion-chip outline color="secondary" (click)="snakeCase()">
+        <ion-label>snakeCase</ion-label>
+      </ion-chip>
+      <ion-chip outline color="secondary" (click)="kebabCase()">
+        <ion-label>kebabCase</ion-label>
+      </ion-chip>
+      <ion-chip outline color="tertiary" (click)="camelCase()">
+        <ion-label>camelCase</ion-label>
+      </ion-chip>
+      <ion-chip outline color="success" (click)="slugify()">
+        <ion-label>slugify</ion-label>
+      </ion-chip>
+      <ion-chip outline color="warning" (click)="capitalize()">
+        <ion-label>capitalize</ion-label>
+      </ion-chip>
+      <ion-chip outline color="danger" (click)="decapitalize()">
+        <ion-label>decapitalize</ion-label>
+      </ion-chip>
+      <ion-chip outline color="danger" (click)="titleCase()">
+        <ion-label>titleCase</ion-label>
+      </ion-chip>
+    </div>
+  </div>
+</ion-content>

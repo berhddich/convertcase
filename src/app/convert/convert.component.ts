@@ -1,6 +1,6 @@
 import { AfterContentInit, Component, OnInit } from '@angular/core';
-import voca from 'voca';
-import { ClipboardService } from 'ngx-clipboard';
+import { ModalController } from '@ionic/angular';
+import { ConvertTextComponent } from './convert-text/convert-text.component';
 
 @Component({
   selector: 'app-convert',
@@ -8,43 +8,26 @@ import { ClipboardService } from 'ngx-clipboard';
   styleUrls: ['./convert.component.scss'],
 })
 export class ConvertComponent implements OnInit {
-  entrytext;
-  finaltext;
-  voca;
 
-  constructor(private clipboardApi: ClipboardService) { }
+
+  constructor(
+    private modalCtrl: ModalController) { }
   ngOnInit(): void {
   }
 
-  lowerCase(): void {
-    this.finaltext = voca.lowerCase(this.entrytext);
+  goToConvert(): void {
+    this.openModal();
   }
-  upperCase(): void {
-    this.finaltext = voca.upperCase(this.entrytext);
+  async openModal() {
+    const modal = await this.modalCtrl.create({
+      component: ConvertTextComponent,
+    });
+    modal.present();
+
+    const { data, role } = await modal.onWillDismiss();
+
+
   }
-  camelCase(): void {
-    this.finaltext = voca.camelCase(this.entrytext);
-  }
-  slugify(): void {
-    this.finaltext = voca.slugify(this.entrytext);
-  }
-  capitalize(): void {
-    this.finaltext = voca.capitalize(this.entrytext);
-  }
-  decapitalize(): void {
-    this.finaltext = voca.decapitalize(this.entrytext);
-  }
-  kebabCase(): void {
-    this.finaltext = voca.kebabCase(this.entrytext);
-  }
-  snakeCase(): void {
-    this.finaltext = voca.snakeCase(this.entrytext);
-  }
-  titleCase(): void {
-    this.finaltext = voca.titleCase(this.entrytext);
-  }
-  copyText() {
-    console.log(this.entrytext);
-    this.clipboardApi.copyFromContent('ddd');
-  }
+
+
 }

@@ -11,7 +11,6 @@ export class AppComponent {
   side;
 
   constructor(private menu: MenuController) {
-    this.checkDarkTheme();
   }
 
   openFirst() {

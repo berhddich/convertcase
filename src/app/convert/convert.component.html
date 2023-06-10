@@ -1,46 +1,24 @@
 <ion-content fullscreen>
-  <ion-list-header
-    ><div style="padding-left: 2rem">Convert case</div>
-  </ion-list-header>
-  <ion-item class="text">
-    <ion-label position="floating">Enter the text</ion-label>
-    <ion-textarea rows="8" [(ngModel)]="entrytext"></ion-textarea>
-  </ion-item>
-  <ion-item class="text">
-    <ion-label position="floating">Result</ion-label>
-    <ion-textarea rows="8" [value]="finaltext" readonly="true"></ion-textarea>
-  </ion-item>
+  <ion-list-header> </ion-list-header>
 
-  <div class="action">
-    <ion-list-header>Action</ion-list-header>
-    <div>
-      <ion-chip outline color="primary" (click)="lowerCase()">
-        <ion-label>lowerCase</ion-label>
-      </ion-chip>
-      <ion-chip outline color="primary" (click)="upperCase()">
-        <ion-label>upperCase</ion-label>
-      </ion-chip>
-      <ion-chip outline color="secondary" (click)="snakeCase()">
-        <ion-label>snakeCase</ion-label>
-      </ion-chip>
-      <ion-chip outline color="secondary" (click)="kebabCase()">
-        <ion-label>kebabCase</ion-label>
-      </ion-chip>
-      <ion-chip outline color="tertiary" (click)="camelCase()">
-        <ion-label>camelCase</ion-label>
-      </ion-chip>
-      <ion-chip outline color="success" (click)="slugify()">
-        <ion-label>slugify</ion-label>
-      </ion-chip>
-      <ion-chip outline color="warning" (click)="capitalize()">
-        <ion-label>capitalize</ion-label>
-      </ion-chip>
-      <ion-chip outline color="danger" (click)="decapitalize()">
-        <ion-label>decapitalize</ion-label>
-      </ion-chip>
-      <ion-chip outline color="danger" (click)="titleCase()">
-        <ion-label>titleCase</ion-label>
-      </ion-chip>
-    </div>
-  </div>
+  <ion-card color="warning" style="margin-top: 5rem" (click)="goToConvert()">
+    <ion-card-header>
+      <ion-card-title>Convert text</ion-card-title>
+      <!-- <ion-card-subtitle>Card Subtitle</ion-card-subtitle> -->
+    </ion-card-header>
+
+    <ion-card-content>
+      It provides a multitude of functions that can be used to manipulate,
+      query, escape, format strings
+    </ion-card-content> </ion-card
+  ><ion-card color="success">
+    <ion-card-header>
+      <ion-card-title>Function text</ion-card-title>
+      <!-- <ion-card-subtitle>Card Subtitle</ion-card-subtitle> -->
+    </ion-card-header>
+
+    <ion-card-content>
+      It provides a detailed and searchable documentation
+    </ion-card-content>
+  </ion-card>
 </ion-content>
