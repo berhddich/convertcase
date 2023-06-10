@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalController } from '@ionic/angular';
+import { ClipboardService } from 'ngx-clipboard';
+import voca from 'voca';
 
 @Component({
   selector: 'app-function-text',
@@ -6,10 +9,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./function-text.component.scss']
 })
 export class FunctionTextComponent implements OnInit {
-
-  constructor() { }
+  entrytext;
+  finaltext;
+  voca;
+  constructor(private modalCtrl: ModalController, private clipboardApi: ClipboardService) { }
 
   ngOnInit(): void {
   }
-
+  cancel() {
+    return this.modalCtrl.dismiss(null, 'cancel');
+  }
 }
