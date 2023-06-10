@@ -8,4 +8,4 @@ import { ConvertPageRoutingModule } from './convert-routing.module';
   imports: [CommonModule, SharedModule, ConvertPageRoutingModule],
   declarations: [ConvertComponent],
 })
-export class ConvertModule {}
+export class ConvertModule { }

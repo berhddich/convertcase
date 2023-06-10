@@ -12,9 +12,8 @@ const routes: Routes = [
   {
     path: 'convert',
     loadChildren: () =>
-      import('./convert/convert-routing.module').then(
-        (m) => m.ConvertPageRoutingModule
-      ),
+      import('./convert/convert.module').then((m) => m.ConvertModule),
+
   },
   {
     path: 'voka',
@@ -33,4 +32,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
