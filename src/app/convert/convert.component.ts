@@ -14,7 +14,6 @@ export class ConvertComponent implements OnInit {
   constructor(
     private modalCtrl: ModalController) { }
   ngOnInit(): void {
-
   }
 
   goToConvert(): void {
